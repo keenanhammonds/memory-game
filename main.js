@@ -83,8 +83,6 @@ function clearBoard(){
     }
     cardsInPlay.length = 0;
     shuffle(cards)
-    return console.log('removing cards');
-
 }
 
 function clearCardsInPlay(){
@@ -92,14 +90,6 @@ function clearCardsInPlay(){
     scoreValue = 0;
     score.textContent = scoreValue;
     return cardsInPlay.length = 0;
-
-}
-
-function startOver(){
-    let startOver = document.getElementById("startOver");
-    startOver.addEventListener("click", clearBoard);
-    startOver.addEventListener("click", clearCardsInPlay);
-    startOver.addEventListener("click", createBoard);
 
 }
 
@@ -123,6 +113,14 @@ function reset(){
     let resetButton = document.getElementById("resetButton");
     resetButton.addEventListener('click', clearBoard);
     resetButton.addEventListener('click', createBoard);
+}
+
+function startOver(){
+    let startOver = document.getElementById("startOver");
+    startOver.addEventListener("click", clearBoard);
+    startOver.addEventListener("click", clearCardsInPlay);
+    startOver.addEventListener("click", createBoard);
+    startOver.addEventListener("click", console.log("starting over"));
 }
 
 createBoard();
