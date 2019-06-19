@@ -54,8 +54,7 @@
         }
     }
 
-// ES6 syntax not working due to not being to access the 'this keyword'
-//
+// ES6 syntax not working due to not being to access the 'this keyword' has to do with lexical scoping
 
     function flipCard(){
         let cardId = this.getAttribute('data-id');
