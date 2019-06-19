@@ -30,8 +30,7 @@
 
     let score = document.getElementById("score");
 
-    function scoreUpdater(){
-
+    const scoreUpdater = () => {
         if(checkForMatch){
             scoreValue++;
             score.textContent = scoreValue;
@@ -39,7 +38,7 @@
         }
     }
 
-    function checkForMatch(){
+    const checkForMatch = () => {
         if(cardsInPlay.length === 2){
             if(cardsInPlay[0] === cardsInPlay[1]){
                 alert('you found a match!');
@@ -55,7 +54,8 @@
         }
     }
 
-
+// ES6 syntax not working due to not being to access the 'this keyword'
+//
 
     function flipCard(){
         let cardId = this.getAttribute('data-id');
@@ -66,7 +66,7 @@
 
     let cardTable = document.getElementById('game-board');
 
-    function createBoard(){
+    const createBoard = () => {
         for (let i = 0; i < cards.length; i++){
             let cardElement = document.createElement('img');
             cardElement.setAttribute('src', 'images/back.png');
@@ -77,8 +77,7 @@
         }
     }
 
-
-    function clearBoard(){
+    const clearBoard = () => {
         while(cardTable.firstChild){
             cardTable.removeChild(cardTable.firstChild);
         }
@@ -86,7 +85,7 @@
         shuffle(cards)
     }
 
-    function clearCardsInPlay(){
+    const clearCardsInPlay = () => {
         console.log(cardsInPlay);
         scoreValue = 0;
         score.textContent = scoreValue;
@@ -110,13 +109,13 @@
         return array;
     }
 
-    function reset(){
+    const reset = () => {
         let resetButton = document.getElementById("resetButton");
         resetButton.addEventListener('click', clearBoard);
         resetButton.addEventListener('click', createBoard);
     }
 
-    function startOver(){
+    const startOver = () => {
         let startOver = document.getElementById("startOver");
         startOver.addEventListener("click", clearBoard);
         startOver.addEventListener("click", clearCardsInPlay);
